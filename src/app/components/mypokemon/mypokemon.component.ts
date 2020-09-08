@@ -13,8 +13,6 @@ export class MypokemonComponent implements OnInit {
   MydataSource = [];
   pokemon;
 
-  // pokemons: any = (data as any).default;
-
   constructor(
     private router: Router,
     private pokemonService: PokemonService,
@@ -23,30 +21,16 @@ export class MypokemonComponent implements OnInit {
 
   ngOnInit(): void {
     this.printPokemons();
-    /* console.log(data); */
   }
 
   printPokemons() {
     this.MydataSource = this.pokemonService.getMyPokemons();
   }
 
-  getPokemon(id) {
-    this.pokemonService.getPokemons(id).subscribe(
-      res => {
-        console.log(res);
-        this.pokemon = res;
-      },
-      err => {
-        console.log(err);
-      }
-    )
-  }
-
   delete(pokemonn) {
-    pokemonn = this.pokemon;
     this.pokemonService.deletePokemon(pokemonn);
     this.snackBService.openSnackBar('pokemon', 'deleted');
-    // this.router.navigateByUrl(`/mypokemons`);
+    this.router.navigateByUrl(`/`);
   }
 
 }

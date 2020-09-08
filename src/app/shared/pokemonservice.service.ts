@@ -22,10 +22,9 @@ export class PokemonService {
   }
 
   deletePokemon(pokemon: IPokemon) {
-    const index: number = this.pokemons.indexOf(pokemon);
-    if (index !== -1) {
-      this.pokemons.splice(index, 1);
-    }
+    /* const index: number = this.pokemons.indexOf(pokemon);
+    this.pokemons.splice(index, 1); */
+    this.pokemons = this.pokemons.filter(item => item !== pokemon);
   }
 
   getMyPokemons(): IPokemon[] {
