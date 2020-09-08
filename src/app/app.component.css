@@ -1,0 +1,17 @@
+.mat-toolbar {
+    background-color: #ef5350;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    top: 0;
+}
+  
+.pokemon-logo {
+      margin-left: 50px;
+      margin-right: 50px;
+      height: 50px;
+      width: 120px;
+}
+
+.menu-item {
+    margin-right: 50px;
+    color: white;
+}
